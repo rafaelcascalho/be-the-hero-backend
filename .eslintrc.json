@@ -1,0 +1,27 @@
+{
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+    "jest/globals": true
+  },
+  "extends": ["eslint:recommended", "plugin:jest/recommended"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "ignorePatterns": ["node_modules/", "coverage/", "data/"],
+  "plugins": ["jest"],
+  "rules": {
+    "quotes": ["warn", "single"],
+    "no-unused-vars": "warn",
+    "no-undef": "warn",
+
+    // Jest rules
+    "jest/no-disabled-tests": "warn",
+    "jest/no-undef": "off"
+  }
+}
