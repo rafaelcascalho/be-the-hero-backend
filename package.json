@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "prestart": "yarn install && yarn check",
     "start": "pm2-runtime start ecosystem.config.js --env production",
     "dev": "nodemon src/server.js",
     "jest": "node --inspect ./node_modules/.bin/jest --config ./jest.config.js --runInBand --detectOpenHandles --forceExit",
