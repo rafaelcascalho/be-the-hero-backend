@@ -95,3 +95,6 @@ logs/
 # cert and key files
 *.pem
 *.crt
+
+# lock file
+yarn.lock
