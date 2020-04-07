@@ -5,13 +5,15 @@ make by  <a href="https://rocketseat.com.br/"> rocketseat. </a></p>
 
 <h3> Jest test coverage reports badges. </h3>
 
-| Statements                                                                                      | Branches                                                                                 | Functions                                                                                      | Lines                                                                                      |
-| ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| Statements                                    | Branches                                  | Functions                                   | Lines                               |
+| --------------------------------------------- | ----------------------------------------- | ------------------------------------------- | ----------------------------------- |
 | ![Statements](https://img.shields.io/badge/Coverage-93.71%25-brightgreen.svg 'Make me better!') | ![Branches](https://img.shields.io/badge/Coverage-81.25%25-yellow.svg 'Make me better!') | ![Functions](https://img.shields.io/badge/Coverage-95.83%25-brightgreen.svg 'Make me better!') | ![Lines](https://img.shields.io/badge/Coverage-93.71%25-brightgreen.svg 'Make me better!') |
 
 ## API Docs
-
 Here is a [link to the api docs.](https://app.swaggerhub.com/apis/rafaelcascalho/Be-the-hero-api-docs/1.0.0)
+
+## Full project Docs
+Here is a [link to the project docs.](https://trello.com/b/UWFHM6CK/omnistack11-be-the-hero)
 
 ## Prerequisites
 ### Required

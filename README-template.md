@@ -10,8 +10,10 @@ make by  <a href="https://rocketseat.com.br/"> rocketseat. </a></p>
 | ![Statements](#statements# 'Make me better!') | ![Branches](#branches# 'Make me better!') | ![Functions](#functions# 'Make me better!') | ![Lines](#lines# 'Make me better!') |
 
 ## API Docs
-
 Here is a [link to the api docs.](https://app.swaggerhub.com/apis/rafaelcascalho/Be-the-hero-api-docs/1.0.0)
+
+## Full project Docs
+Here is a [link to the project docs.](https://trello.com/b/UWFHM6CK/omnistack11-be-the-hero)
 
 ## Prerequisites
 ### Required
