@@ -5,7 +5,7 @@ const selectionFields = [
   'ongs.email',
   'ongs.whatsapp',
   'ongs.uf',
-  'ongs.city'
+  'ongs.city',
 ];
 
 module.exports = {
@@ -18,9 +18,7 @@ module.exports = {
   },
 
   async find(ong_id) {
-    return connection('incidents')
-      .where('ong_id', ong_id)
-      .select('*');
+    return connection('incidents').where('ong_id', ong_id).select('*');
   },
 
   async count() {
@@ -35,9 +33,7 @@ module.exports = {
   },
 
   async delete(id) {
-    return connection('incidents')
-      .where('id', id)
-      .del();
+    return connection('incidents').where('id', id).del();
   },
 
   async findOne({ id, title }) {
@@ -53,5 +49,5 @@ module.exports = {
       return incidents[0];
     }
     return undefined;
-  }
+  },
 };

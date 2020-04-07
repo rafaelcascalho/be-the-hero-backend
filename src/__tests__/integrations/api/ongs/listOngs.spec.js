@@ -20,13 +20,13 @@ describe('GET /ongs', () => {
 
   context('when there are one or more ongs', () => {
     it('returns an array of ongs', async () => {
-      await ongFactory.createMany(3);
+      const ongs = await ongFactory.createMany(3);
 
       const response = await request(api).get('/api/v1/ongs');
 
       expect(response.status).toEqual(200);
       expect(response.body.status).toEqual('success');
-      expect(response.body.ongs.length).toBeGreaterThan(0);
+      expect(response.body.ongs).toMatchObject(ongs);
     });
   });
 });

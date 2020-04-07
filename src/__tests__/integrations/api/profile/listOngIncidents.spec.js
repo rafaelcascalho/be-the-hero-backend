@@ -6,6 +6,11 @@ const connection = require('../../../../database/connection');
 
 let ongId;
 
+beforeAll(async () => {
+  const ong = await ongFactory.create();
+  ongId = ong.id;
+});
+
 afterAll(async () => {
   await connection('ongs').del();
 });
@@ -26,12 +31,9 @@ describe('GET /profile', () => {
     });
   });
 
-  context('when the ong does exists', () => {
+  context('when the ong exists', () => {
     context('when the ong has no incidents', () => {
-      it('returns and empty array', async () => {
-        const ong = await ongFactory.create();
-        ongId = ong.id;
-
+      it('returns an empty array', async () => {
         const response = await request(api)
           .get('/api/v1/profile')
           .set('Content-type', 'application/json')
@@ -44,8 +46,8 @@ describe('GET /profile', () => {
     });
 
     context('when the ong has one or more incidents', () => {
-      it('returns an array of objects', async () => {
-        await incidentFactory.createMany(ongId, 4);
+      it('returns an array of incidents', async () => {
+        const incidents = await incidentFactory.createMany(ongId, 4);
 
         const response = await request(api)
           .get('/api/v1/profile')
@@ -54,7 +56,7 @@ describe('GET /profile', () => {
 
         expect(response.status).toEqual(200);
         expect(response.body.status).toEqual('success');
-        expect(response.body.incidents.length).toEqual(4);
+        expect(response.body.incidents).toMatchObject(incidents);
       });
     });
   });

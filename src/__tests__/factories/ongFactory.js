@@ -17,7 +17,7 @@ const build = () => {
     email: chance.email({ domain: `${ongName.toLowerCase()}.org` }),
     whatsapp: chance.phone(),
     city: random.city(ongUf.index),
-    uf: ongUf.name
+    uf: ongUf.name,
   };
 };
 
@@ -28,16 +28,19 @@ const create = async () => {
   return ong;
 };
 
-const createMany = async numberOfOngs => {
+const createMany = async (numberOfOngs) => {
+  let ongs = [];
   for (let index = 0; index < numberOfOngs; index++) {
     let ong = build();
     ong.id = genId();
     await connection('ongs').insert(ong);
+    ongs.push(ong);
   }
+  return ongs;
 };
 
 module.exports = {
   build,
   create,
-  createMany
+  createMany,
 };

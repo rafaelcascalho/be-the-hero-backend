@@ -25,7 +25,9 @@ const build = () => ({
 const create = async (ongId) => {
   let incident = build();
   incident.ong_id = ongId;
+
   const [id] = await connection('incidents').insert(incident, 'id');
+
   incident.id = id;
   return incident;
 };
@@ -35,7 +37,12 @@ const createMany = async (ongId, numberOfIncidents) => {
   for (let index = 0; index < numberOfIncidents; index++) {
     let incident = build();
     incident.ong_id = ongId;
-    incident = await connection('incidents').insert(incident);
+
+    await connection('incidents').insert(incident);
+
+    incident.value = incident.value.toFixed(2);
+    incident.value = incident.value.toString();
+
     incidents.push(incident);
   }
   return incidents;
