@@ -5,15 +5,16 @@ make by  <a href="https://rocketseat.com.br/"> rocketseat. </a></p>
 
 <h3> Jest test coverage reports badges. </h3>
 
-| Statements                                    | Branches                                  | Functions                                   | Lines                               |
-| --------------------------------------------- | ----------------------------------------- | ------------------------------------------- | ----------------------------------- |
+| Statements                                                                                      | Branches                                                                                 | Functions                                                                                      | Lines                                                                                      |
+| ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
 | ![Statements](https://img.shields.io/badge/Coverage-93.71%25-brightgreen.svg 'Make me better!') | ![Branches](https://img.shields.io/badge/Coverage-81.25%25-yellow.svg 'Make me better!') | ![Functions](https://img.shields.io/badge/Coverage-95.83%25-brightgreen.svg 'Make me better!') | ![Lines](https://img.shields.io/badge/Coverage-93.71%25-brightgreen.svg 'Make me better!') |
 
-## API Docs
-Here is a [link to the api docs.](https://app.swaggerhub.com/apis/rafaelcascalho/Be-the-hero-api-docs/1.0.0)
+## Documentation
+### Full Project
+Here is a link to the[project docs.](https://trello.com/b/UWFHM6CK/omnistack11-be-the-hero)
 
-## Full project Docs
-Here is a [link to the project docs.](https://trello.com/b/UWFHM6CK/omnistack11-be-the-hero)
+### API
+Here is a link to the [api docs.](https://app.swaggerhub.com/apis/rafaelcascalho/Be-the-hero-api-docs/1.0.0)
 
 ## Prerequisites
 ### Required
@@ -23,11 +24,24 @@ Here is a [link to the project docs.](https://trello.com/b/UWFHM6CK/omnistack11-
 
 ### Optional
 - docker v19.03.8, build afacb8b7f
-- docker-ccompose v1.25.4, build 8d51620a
+- docker-compose v1.25.4, build 8d51620a
 
 ## Instalation
 1. Install `yarn` or `npm`
 2. Install the `postgres` dbms in your machine OR docker (composer is also optional)
+
+### Optional
+If you want to execute the `knex` commands with a shorter command, just install the `npx` module
+globaly.
+So you'll be able to run
+```
+npx knex command
+```
+
+Instead of
+```
+node_modules/.bin/knex command
+```
 
 ## Getting started
 ### Set up
@@ -75,7 +89,7 @@ To access the coverage reports generated, you can just access the `/coverage/lco
 from your browser, in the just generated folder `coverage` in the root of the project.
 
 ## Deployment
-This project is currently deployed at heroku in this [`base_url`](https://be-the-hero-be-api.herokuapp.com/api/v1).
+This project is currently deployed at [heroku PAAS](http://heroku.com/).
 Case you're interested in doing the same just [check out this tutorial](https://devcenter.heroku.com/articles/deploying-nodejs).
 
 ### IF you're using docker with docker-compose

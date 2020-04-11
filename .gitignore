@@ -86,9 +86,6 @@ data/
 # Personal notes file
 .notes
 
-# Docs
-README.bkp.md
-
 # Logs
 logs/
 
@@ -98,3 +95,7 @@ logs/
 
 # lock file
 yarn.lock
+
+# Sec analysis
+.snyk
+sec_results.html
