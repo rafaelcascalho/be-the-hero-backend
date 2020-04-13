@@ -145,7 +145,7 @@ $ yarn test:cov
 To access the coverage reports generated, you can just access the `/coverage/lcov-report/index.html`
 from your browser, in the just generated folder `coverage` in the root of the project.
 
-## Deployment :smiling_face_with_sunglasses:
+## Deployment
 
 This project is currently deployed at [heroku PAAS](http://heroku.com/).
 Case you're interested in doing the same just [check out this tutorial](https://devcenter.heroku.com/articles/deploying-nodejs).
