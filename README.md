@@ -51,7 +51,7 @@ $ docker-compose -v
 docker-compose version 1.25.4, build 8d51620a
 ```
 
-## Instalation
+## :construction: Instalation :construction:
 
 1. Install `yarn` or `npm`
 2. Install the `postgres` dbms in your machine OR docker (composer is also optional)
@@ -72,9 +72,9 @@ Instead of
 $ node_modules/.bin/knex command
 ```
 
-## Getting started
+## :rocket: Getting started :rocket:
 
-### :construction: Set up :construction:
+### Set up and run :woman_running:
 
 1. Clone the repository and enter the repository directory
    ```
@@ -128,7 +128,7 @@ $ node_modules/.bin/knex command
 
 5. That's it! You're all set. :clinking_beer_mugs:
 
-## Running the tests :test_tube:
+## :test_tube: Running the tests :test_tube:
 
 To run the tests just use the command
 
@@ -150,7 +150,7 @@ from your browser, in the just generated folder `coverage` in the root of the pr
 This project is currently deployed at [heroku PAAS](http://heroku.com/).
 Case you're interested in doing the same just [check out this tutorial](https://devcenter.heroku.com/articles/deploying-nodejs).
 
-### IF you're using docker with docker-compose :whale:
+### :whale: IF you're using docker with docker-compose :whale:
 
 This is an example of my docker-compose file
 
