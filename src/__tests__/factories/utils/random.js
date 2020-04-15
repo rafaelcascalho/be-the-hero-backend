@@ -23,8 +23,6 @@ module.exports = {
     const roof = getCitiesNumber(index);
     const cityIndex = genRandomNumber(roof);
 
-    console.log(index);
-
     return ufsAndCities[index].cidades[cityIndex];
   },
 

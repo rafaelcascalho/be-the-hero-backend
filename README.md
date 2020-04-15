@@ -7,7 +7,7 @@ make by  <a href="https://rocketseat.com.br/"> rocketseat. </a></p>
 
 | Statements                                    | Branches                                  | Functions                                   | Lines                               |
 | --------------------------------------------- | ----------------------------------------- | ------------------------------------------- | ----------------------------------- |
-| ![Statements](https://img.shields.io/badge/Coverage-91.82%25-brightgreen.svg 'Make me better!') | ![Branches](https://img.shields.io/badge/Coverage-75%25-red.svg 'Make me better!') | ![Functions](https://img.shields.io/badge/Coverage-85.19%25-yellow.svg 'Make me better!') | ![Lines](https://img.shields.io/badge/Coverage-92.24%25-brightgreen.svg 'Make me better!') |
+| ![Statements](https://img.shields.io/badge/Coverage-95.45%25-brightgreen.svg 'Make me better!') | ![Branches](https://img.shields.io/badge/Coverage-78.85%25-red.svg 'Make me better!') | ![Functions](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg 'Make me better!') | ![Lines](https://img.shields.io/badge/Coverage-95.43%25-brightgreen.svg 'Make me better!') |
 
 ## :books: Documentation :books:
 

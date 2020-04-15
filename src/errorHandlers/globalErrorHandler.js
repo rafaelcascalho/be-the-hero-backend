@@ -17,8 +17,6 @@ const errorMessage = (error) => {
 const presentMessage = (message) => message.replace('"', '').replace('"', '');
 
 exports.globalErrorHandler = async (error, request, response, next) => {
-  console.log(error);
-
   let statusCode = errorStatus(error);
   let message = errorMessage(error);
 
