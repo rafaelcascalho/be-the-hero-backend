@@ -6,20 +6,11 @@ module.exports = {
   },
 
   async create({ id, name, email, whatsapp, city, uf }) {
-    return connection('ongs').insert({
-      id,
-      name,
-      email,
-      whatsapp,
-      city,
-      uf
-    });
+    return connection('ongs').insert({ id, name, email, whatsapp, city, uf });
   },
 
   async delete(id) {
-    return connection('ongs')
-      .where('id', id)
-      .del();
+    return connection('ongs').where('id', id).del();
   },
 
   async findOne({ id, name }) {
@@ -34,5 +25,5 @@ module.exports = {
       return ongs[0];
     }
     return undefined;
-  }
+  },
 };

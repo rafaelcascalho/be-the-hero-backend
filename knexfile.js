@@ -10,10 +10,7 @@ const DEFAULT = {
     port: process.env.DB_PORT,
     host: process.env.DB_HOST,
   },
-  pool: {
-    min: 2,
-    max: 10,
-  },
+  pool: { min: 2, max: 10 },
   migrations: {
     directory: './src/database/migrations',
     tableName: 'knex_migrations',
@@ -25,7 +22,7 @@ module.exports = {
     ...DEFAULT,
     connection: {
       ...DEFAULT.connection,
-      database: process.env.DB_NAME || 'omni11_dev',
+      database: process.env.DB_NAME || 'omni11_test',
     },
   },
 

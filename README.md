@@ -5,15 +5,15 @@ make by  <a href="https://rocketseat.com.br/"> rocketseat. </a></p>
 
 <h3> Jest test coverage reports badges. </h3>
 
-| Statements                                                                                      | Branches                                                                                 | Functions                                                                                      | Lines                                                                                      |
-| ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| ![Statements](https://img.shields.io/badge/Coverage-93.71%25-brightgreen.svg 'Make me better!') | ![Branches](https://img.shields.io/badge/Coverage-81.25%25-yellow.svg 'Make me better!') | ![Functions](https://img.shields.io/badge/Coverage-95.83%25-brightgreen.svg 'Make me better!') | ![Lines](https://img.shields.io/badge/Coverage-93.71%25-brightgreen.svg 'Make me better!') |
+| Statements                                    | Branches                                  | Functions                                   | Lines                               |
+| --------------------------------------------- | ----------------------------------------- | ------------------------------------------- | ----------------------------------- |
+| ![Statements](https://img.shields.io/badge/Coverage-91.82%25-brightgreen.svg 'Make me better!') | ![Branches](https://img.shields.io/badge/Coverage-75%25-red.svg 'Make me better!') | ![Functions](https://img.shields.io/badge/Coverage-85.19%25-yellow.svg 'Make me better!') | ![Lines](https://img.shields.io/badge/Coverage-92.24%25-brightgreen.svg 'Make me better!') |
 
 ## :books: Documentation :books:
 
 ### Full Project
 
-Here is a link to the[project docs.](https://trello.com/b/UWFHM6CK/omnistack11-be-the-hero)
+Here is a link to the [project docs.](https://trello.com/b/UWFHM6CK/omnistack11-be-the-hero)
 
 ### API
 
@@ -39,7 +39,7 @@ $ yarn -v
 
 Postgres version 12.2
 
-### Optional :nerd_face:
+### Optional :glasses:
 
 Docker and docker-compose
 
@@ -56,7 +56,7 @@ docker-compose version 1.25.4, build 8d51620a
 1. Install `yarn` or `npm`
 2. Install the `postgres` dbms in your machine OR docker (composer is also optional)
 
-### Optional :nerd_face:
+### Optional :glasses:
 
 If you want to execute the `knex` commands with a shorter command, just install the `npx` module
 globaly.

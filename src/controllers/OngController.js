@@ -1,4 +1,4 @@
-const crypto = require('crypto');
+const uuid = require('uuid');
 const OngsRepository = require('../repositories/OngsRepository');
 
 module.exports = {
@@ -7,7 +7,7 @@ module.exports = {
       const ongs = await OngsRepository.all();
       return response.status(200).json({
         status: 'success',
-        ongs: ongs
+        ongs: ongs,
       });
     } catch (error) {
       return next(error);
@@ -18,18 +18,15 @@ module.exports = {
     if (request.ong) {
       return response.status(409).json({
         status: 'error',
-        message: 'ONG Already Exists'
+        message: 'ONG Already Exists',
       });
     }
 
     const { name, email, whatsapp, city, uf } = request.body;
-    const id = crypto.randomBytes(8).toString('HEX');
+    const id = uuid.v4();
     try {
       await OngsRepository.create({ id, name, email, whatsapp, city, uf });
-      return response.status(201).json({
-        status: 'success',
-        id: id
-      });
+      return response.status(201).json({ status: 'success', id });
     } catch (error) {
       return next(error);
     }
@@ -40,17 +37,15 @@ module.exports = {
       if (!request.ong) {
         return response.status(404).json({
           status: 'error',
-          message: 'ONG Not Found'
+          message: 'ONG Not Found',
         });
       }
 
       await OngsRepository.delete(request.ong.id);
 
-      return response.status(200).json({
-        status: 'success'
-      });
+      return response.status(200).json({ status: 'success' });
     } catch (error) {
       return next(error);
     }
-  }
+  },
 };

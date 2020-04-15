@@ -13,7 +13,7 @@ make by  <a href="https://rocketseat.com.br/"> rocketseat. </a></p>
 
 ### Full Project
 
-Here is a link to the[project docs.](https://trello.com/b/UWFHM6CK/omnistack11-be-the-hero)
+Here is a link to the [project docs.](https://trello.com/b/UWFHM6CK/omnistack11-be-the-hero)
 
 ### API
 
@@ -39,7 +39,7 @@ $ yarn -v
 
 Postgres version 12.2
 
-### Optional :nerd_face:
+### Optional :glasses:
 
 Docker and docker-compose
 
@@ -56,7 +56,7 @@ docker-compose version 1.25.4, build 8d51620a
 1. Install `yarn` or `npm`
 2. Install the `postgres` dbms in your machine OR docker (composer is also optional)
 
-### Optional :nerd_face:
+### Optional :glasses:
 
 If you want to execute the `knex` commands with a shorter command, just install the `npx` module
 globaly.

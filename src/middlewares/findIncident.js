@@ -3,7 +3,7 @@ const IncidentsRepository = require('../repositories/IncidentsRepository');
 const args = (request) => {
   const { id } = request.params;
   if (id) {
-    return { id: id };
+    return { id };
   }
   return { title: request.body.title };
 };
