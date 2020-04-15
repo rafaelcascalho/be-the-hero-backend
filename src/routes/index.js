@@ -1,18 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-const ongsRoutes = require('./ongs.routes');
-const incidentsRoutes = require('./incidents.routes');
-
-const ProfileController = require('../controllers/ProfileController');
-const SessionController = require('../controllers/SessionController');
-
-const { findOng } = require('../middlewares/findOng');
+const ongsRoutes = require('./ongsRoutes');
+const incidentsRoutes = require('./incidentsRoutes');
+const profileRoutes = require('./profileRoutes');
+const sessionsRoutes = require('./sessionsRoutes');
 
 router.use('/ongs', ongsRoutes);
 router.use('/incidents', incidentsRoutes);
-
-router.get('/profile', [findOng, ProfileController.index]);
-router.post('/sessions', [findOng, SessionController.login]);
+router.use(profileRoutes);
+router.use(sessionsRoutes);
 
 module.exports = router;
