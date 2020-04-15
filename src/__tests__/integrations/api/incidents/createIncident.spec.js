@@ -19,6 +19,19 @@ afterAll(async () => {
 describe('POST /incidents', () => {
   let incident = incidentFactory.build();
 
+  context('given authorization header is empty', () => {
+    it('returns authorization is required', async () => {
+      const response = await request(api)
+        .post('/api/v1/incidents')
+        .send(incident)
+        .set('Content-type', 'application/json');
+
+      expect(response.status).toEqual(400);
+      expect(response.body.status).toEqual('error');
+      expect(response.body.message).toEqual('authorization is required');
+    });
+  });
+
   context('when a new incident is sent', () => {
     it('returns the new incident data', async () => {
       const response = await request(api)

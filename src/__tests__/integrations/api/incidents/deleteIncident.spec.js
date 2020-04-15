@@ -3,6 +3,7 @@ const request = require('supertest');
 const ongFactory = require('../../../factories/ongFactory');
 const incidentFactory = require('../../../factories/incidentFactory');
 const connection = require('../../../../database/connection');
+const uuid = require('uuid');
 
 let ongId;
 
@@ -17,10 +18,22 @@ afterAll(async () => {
 });
 
 describe('DELETE /incidents/:id', () => {
-  context('when the incident does not exist', () => {
-    it('returns ong not found', async () => {
-      const id = 9999;
+  const id = 9999;
 
+  context('given authorization header is empty', () => {
+    it('returns authorization is required', async () => {
+      const response = await request(api)
+        .delete(`/api/v1/incidents/${id}`)
+        .set('Content-type', 'application/json');
+
+      expect(response.status).toEqual(400);
+      expect(response.body.status).toEqual('error');
+      expect(response.body.message).toEqual('authorization is required');
+    });
+  });
+
+  context('given the incident does not exist', () => {
+    it('returns ong not found', async () => {
       const response = await request(api)
         .delete(`/api/v1/incidents/${id}`)
         .set('Content-type', 'application/json')
@@ -32,9 +45,9 @@ describe('DELETE /incidents/:id', () => {
     });
   });
 
-  context('when the incident exists', () => {
+  context('given incident exists', () => {
     context('when the ong is not the owner', () => {
-      const invalidOngId = 9999;
+      const invalidOngId = uuid.v4();
 
       it('returns error', async () => {
         const incident = await incidentFactory.create(ongId);

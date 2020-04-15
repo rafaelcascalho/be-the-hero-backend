@@ -25,9 +25,24 @@ afterAll(async () => {
 });
 
 describe('GET /incidents', () => {
-  context('when there are no incidents', () => {
+  context('given the authorization header is empty', () => {
+    it('returns authorization is required', async () => {
+      const response = await request(api)
+        .get('/api/v1/incidents')
+        .set('Content-type', 'application/json');
+
+      expect(response.status).toEqual(400);
+      expect(response.body.status).toEqual('error');
+      expect(response.body.message).toEqual('authorization is required');
+    });
+  });
+
+  context('given no incidents exist', () => {
     it('returns an empty array', async () => {
-      const response = await request(api).get('/api/v1/incidents');
+      const response = await request(api)
+        .get('/api/v1/incidents')
+        .set('Content-type', 'application/json')
+        .set('authorization', ong.id);
 
       expect(response.status).toEqual(200);
       expect(response.body.status).toEqual('success');
@@ -35,12 +50,15 @@ describe('GET /incidents', () => {
     });
   });
 
-  context('when there are one or more incidents', () => {
+  context('given one or more incidents exist', () => {
     it('returns an array of incidents', async () => {
       let incidents = await incidentFactory.createMany(ong.id, 6);
       incidents = incidents.map(addOngFields).slice(0, 5);
 
-      const response = await request(api).get('/api/v1/incidents');
+      const response = await request(api)
+        .get('/api/v1/incidents')
+        .set('Content-type', 'application/json')
+        .set('authorization', ong.id);
 
       expect(response.status).toEqual(200);
       expect(response.body.status).toEqual('success');

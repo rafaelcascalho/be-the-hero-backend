@@ -3,6 +3,7 @@ const request = require('supertest');
 const ongFactory = require('../../../factories/ongFactory');
 const incidentFactory = require('../../../factories/incidentFactory');
 const connection = require('../../../../database/connection');
+const uuid = require('uuid');
 
 let ongId;
 
@@ -16,9 +17,21 @@ afterAll(async () => {
 });
 
 describe('GET /profile', () => {
-  context('when the ong does not exist', () => {
+  context('given the ong id is not send', () => {
+    it('returns authorization is required', async () => {
+      const response = await request(api)
+        .get('/api/v1/profile')
+        .set('Content-type', 'application/json');
+
+      expect(response.status).toEqual(400);
+      expect(response.body.status).toEqual('error');
+      expect(response.body.message).toEqual('authorization is required');
+    });
+  });
+
+  context('given the ong does not exist', () => {
     it('returns ong not found', async () => {
-      const unexistentOngId = 9999;
+      const unexistentOngId = uuid.v4();
 
       const response = await request(api)
         .get('/api/v1/profile')
@@ -31,7 +44,7 @@ describe('GET /profile', () => {
     });
   });
 
-  context('when the ong exists', () => {
+  context('given the ong exists', () => {
     context('when the ong has no incidents', () => {
       it('returns an empty array', async () => {
         const response = await request(api)

@@ -8,7 +8,7 @@ afterAll(async () => {
 });
 
 describe('GET /ongs', () => {
-  context('when there are no ongs', () => {
+  context('given no ongs exist', () => {
     it('returns an empty array', async () => {
       const response = await request(api).get('/api/v1/ongs');
 
@@ -18,7 +18,7 @@ describe('GET /ongs', () => {
     });
   });
 
-  context('when there are one or more ongs', () => {
+  context('given one or more ongs exist', () => {
     it('returns an array of ongs', async () => {
       const ongs = await ongFactory.createMany(3);
 
