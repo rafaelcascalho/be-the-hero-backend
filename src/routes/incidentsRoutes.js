@@ -9,7 +9,7 @@ const { headers } = require('../validators/ongAuthValidators');
 
 const { findIncident } = require('../middlewares/findIncident');
 
-router.get('/', [celebrate({ headers, query }), index]);
+router.get('/', [celebrate({ query }), index]);
 router.post('/', [celebrate({ headers, body }), findIncident, store]);
 router.delete('/:id', [celebrate({ headers, params }), findIncident, destroy]);
 
