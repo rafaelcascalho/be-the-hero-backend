@@ -7,7 +7,7 @@ make by  <a href="https://rocketseat.com.br/"> rocketseat. </a></p>
 
 | Statements                                    | Branches                                  | Functions                                   | Lines                               |
 | --------------------------------------------- | ----------------------------------------- | ------------------------------------------- | ----------------------------------- |
-| ![Statements](https://img.shields.io/badge/Coverage-95.45%25-brightgreen.svg 'Make me better!') | ![Branches](https://img.shields.io/badge/Coverage-78.85%25-red.svg 'Make me better!') | ![Functions](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg 'Make me better!') | ![Lines](https://img.shields.io/badge/Coverage-95.43%25-brightgreen.svg 'Make me better!') |
+| ![Statements](https://img.shields.io/badge/Coverage-95.82%25-brightgreen.svg 'Make me better!') | ![Branches](https://img.shields.io/badge/Coverage-78.85%25-red.svg 'Make me better!') | ![Functions](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg 'Make me better!') | ![Lines](https://img.shields.io/badge/Coverage-95.8%25-brightgreen.svg 'Make me better!') |
 
 ## :books: Documentation :books:
 
@@ -128,6 +128,14 @@ $ node_modules/.bin/knex command
 
 5. That's it! You're all set. :clinking_beer_mugs:
 
+## :seedling: Seeding the database :seedling:
+
+To seed the database just run the command
+
+```
+$ yarn seed
+```
+
 ## :test_tube: Running the tests :test_tube:
 
 To run the tests just use the command
@@ -140,6 +148,20 @@ To run the tests and generate the coverage report run the command
 
 ```
 $ yarn test:cov
+```
+
+## :shield: Checking dependencies :shield:
+
+To check if your dependecies have vulnerabilities just run the command
+
+```
+$ yarn sec
+```
+
+Case snyk finds any problems, you can run the wizard to manage them one by one with the command
+
+```
+$ yarn sec:wizard
 ```
 
 To access the coverage reports generated, you can just access the `/coverage/lcov-report/index.html`
@@ -166,3 +188,23 @@ POSTGRES_PASSWORD: password
 volumes: - ./data:/var/lib/postgresql/data
 ports: - 5455:5432
 ```
+
+## Built With
+
+- [NodeJs](https://nodejs.org/) - Backend environment for javascript
+- [Knex](http://knexjs.org/) - SQL query builder
+- [Celebrate](https://www.npmjs.com/package/celebrate) - Request validator
+- [Dotenv](https://www.npmjs.com/package/dotenv) - Env files loader
+- [Winston](https://github.com/winstonjs/winston) - Logger
+- [Cors](https://www.npmjs.com/package/cors) - Cors enabler for express
+- [Jest](https://jestjs.io/) - Automated tests library
+- [Chance](https://chancejs.com/) - Random data generator for tests
+- [PM2](https://pm2.keymetrics.io/) - Process manager for deployment
+- [Snyk](https://snyk.io/) - Dependency security checker
+- [Helmet](https://helmetjs.github.io/) - Headers setter for security for express
+- [Eslint](https://eslint.org/) - Code linting tool
+- [Prettier](https://prettier.io/) - Code formatter
+- [Editorconfig](https://editorconfig.org/) - Code style enforcer
+- [Docker](https://www.docker.com/) - Virtualizer of containers
+- [Docker Compose](https://docs.docker.com/compose/) - Containers manager
+- [Postgres](https://www.postgresql.org/) - Database
