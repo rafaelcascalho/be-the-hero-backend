@@ -97,5 +97,5 @@ logs/
 yarn.lock
 
 # Sec analysis
+security/
 .snyk
-sec_results.html
