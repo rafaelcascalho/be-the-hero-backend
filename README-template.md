@@ -79,13 +79,6 @@ $ node_modules/.bin/knex command
 1. Clone the repository and enter the repository directory
    ```
    $ git clone git@github.com:rafaelcascalho/be-the-hero-backend.git
-   Cloning into 'be-the-hero-backend'...
-   remote: Enumerating objects: 112, done.
-   remote: Counting objects: 100% (112/112), done.
-   remote: Compressing objects: 100% (73/73), done.
-   remote: Total 112 (delta 41), reused 104 (delta 33), pack-reused 0
-   Receiving objects: 100% (112/112), 151.70 KiB | 626.00 KiB/s, done.
-   Resolving deltas: 100% (41/41), done.
    $ cd be-the-hero-backend
    ```
 2. Set up the database
