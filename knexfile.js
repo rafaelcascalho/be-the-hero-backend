@@ -15,6 +15,10 @@ const DEFAULT = {
     directory: './src/database/migrations',
     tableName: 'knex_migrations',
   },
+  seeds: {
+    directory: './src/database/seeds',
+    tableName: 'knex_seeds',
+  },
 };
 
 module.exports = {
