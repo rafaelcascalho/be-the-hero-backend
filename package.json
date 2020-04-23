@@ -5,10 +5,13 @@
   "scripts": {
     "start": "pm2-runtime start ecosystem.config.js --env production",
     "dev": "nodemon src/server.js",
-    "jest": "./node_modules/.bin/jest --config ./jest.config.js --runInBand --detectOpenHandles --forceExit",
+    "jest": "cross-env NODE_ENV=test ./node_modules/.bin/jest --config ./jest.config.js --runInBand --detectOpenHandles --forceExit",
     "test": "yarn jest --verbose",
     "test:cov": "yarn jest --coverage && node_modules/.bin/jest-badges-readme",
-    "lint": "node_modules/.bin/eslint src"
+    "lint": "node_modules/.bin/eslint src",
+    "sec": "node_modules/.bin/snyk test",
+    "sec:wizard": "node_modules/.bin/snyk wizard",
+    "seed": "node_modules/.bin/knex seed:run"
   },
   "license": "MIT",
   "author": "Rafael Cascalho",
@@ -21,13 +24,15 @@
     "helmet": "^3.22.0",
     "knex": "^0.20.13",
     "pg": "^7.18.2",
-    "pm2": "^4.2.3",
+    "pm2": "4.3.0",
+    "snyk": "^1.309.0",
     "uuid": "^7.0.3",
     "winston": "^3.2.1"
   },
   "devDependencies": {
     "@olavoparno/jest-badges-readme": "^1.4.1",
     "chance": "^1.1.4",
+    "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "eslint-plugin-jest": "^23.8.2",
     "factory-girl": "^5.0.4",
