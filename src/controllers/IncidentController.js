@@ -8,7 +8,7 @@ module.exports = {
       const [{ count }] = await IncidentsRepository.count();
       const incidents = await IncidentsRepository.all(page);
 
-      response.header('X-Total-Count', count['count(*)']);
+      response.header('X-Total-Count', count);
 
       return response.status(200).json({
         status: 'success',
