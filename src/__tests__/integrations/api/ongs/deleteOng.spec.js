@@ -5,8 +5,15 @@ const incidentFactory = require('../../../factories/incidentFactory');
 const connection = require('../../../../database/connection');
 const uuid = require('uuid');
 
+beforeAll(async () => {
+  await connection.migrate.rollback();
+  await connection.migrate.latest();
+});
+
 afterAll(async () => {
   await connection('ongs').del();
+
+  await connection.destroy();
 });
 
 describe('DELETE /ongs/:id', () => {

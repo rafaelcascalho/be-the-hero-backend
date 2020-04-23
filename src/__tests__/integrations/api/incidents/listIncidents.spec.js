@@ -15,6 +15,9 @@ const addOngFields = (incident) => {
 };
 
 beforeAll(async () => {
+  await connection.migrate.rollback();
+  await connection.migrate.latest();
+
   const Ong = await ongFactory.create();
   ong = Ong;
 });
@@ -22,21 +25,11 @@ beforeAll(async () => {
 afterAll(async () => {
   await connection('ongs').del();
   await connection('incidents').del();
+
+  await connection.destroy();
 });
 
 describe('GET /incidents', () => {
-  context('given the authorization header is empty', () => {
-    it('returns authorization is required', async () => {
-      const response = await request(api)
-        .get('/api/v1/incidents')
-        .set('Content-type', 'application/json');
-
-      expect(response.status).toEqual(400);
-      expect(response.body.status).toEqual('error');
-      expect(response.body.message).toEqual('authorization is required');
-    });
-  });
-
   context('given no incidents exist', () => {
     it('returns an empty array', async () => {
       const response = await request(api)

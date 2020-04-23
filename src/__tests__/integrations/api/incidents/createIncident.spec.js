@@ -7,6 +7,9 @@ const connection = require('../../../../database/connection');
 let ongId;
 
 beforeAll(async () => {
+  await connection.migrate.rollback();
+  await connection.migrate.latest();
+
   const ong = await ongFactory.create();
   ongId = ong.id;
 });
@@ -14,6 +17,8 @@ beforeAll(async () => {
 afterAll(async () => {
   await connection('ongs').del();
   await connection('incidents').del();
+
+  //await connection.destroy();
 });
 
 describe('POST /incidents', () => {

@@ -3,8 +3,15 @@ const request = require('supertest');
 const ongFactory = require('../../../factories/ongFactory');
 const connection = require('../../../../database/connection');
 
+beforeAll(async () => {
+  await connection.migrate.rollback();
+  await connection.migrate.latest();
+});
+
 afterAll(async () => {
   await connection('ongs').del();
+
+  await connection.destroy();
 });
 
 describe('GET /ongs', () => {

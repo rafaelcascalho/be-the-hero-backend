@@ -2,36 +2,35 @@ const ufsAndCities = require('./ufsAndCities');
 
 const genRandomNumber = (roof = 28) => Math.floor(Math.random() * roof);
 
-const getCitiesNumber = (index) => {
-  try {
-    return ufsAndCities[index].cidades.length;
-  } catch (error) {
-    return 5;
-  }
-};
+const getCitiesNumber = (index) => ufsAndCities[index].cidades.length;
 
-const getSiglaUf = (index) => {
-  try {
-    return ufsAndCities[index].sigla;
-  } catch (error) {
-    return 'GO';
-  }
-};
+const getSiglaUf = (index) => ufsAndCities[index].sigla;
 
 module.exports = {
   city(index) {
-    const roof = getCitiesNumber(index);
-    const cityIndex = genRandomNumber(roof);
+    try {
+      const roof = getCitiesNumber(index);
+      const cityIndex = genRandomNumber(roof);
 
-    return ufsAndCities[index].cidades[cityIndex];
+      return ufsAndCities[index].cidades[cityIndex];
+    } catch (error) {
+      return 'Goiânia';
+    }
   },
 
   uf() {
-    const ufIndex = genRandomNumber();
+    try {
+      const ufIndex = genRandomNumber();
 
-    return {
-      index: ufIndex,
-      name: getSiglaUf(ufIndex),
-    };
+      return {
+        index: ufIndex,
+        name: getSiglaUf(ufIndex),
+      };
+    } catch (error) {
+      return {
+        index: 9,
+        name: 'GO',
+      };
+    }
   },
 };

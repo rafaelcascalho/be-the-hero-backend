@@ -8,12 +8,17 @@ const uuid = require('uuid');
 let ongId;
 
 beforeAll(async () => {
+  await connection.migrate.rollback();
+  await connection.migrate.latest();
+
   const ong = await ongFactory.create();
   ongId = ong.id;
 });
 
 afterAll(async () => {
   await connection('ongs').del();
+
+  await connection.destroy();
 });
 
 describe('GET /profile', () => {

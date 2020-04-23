@@ -3,8 +3,15 @@ const request = require('supertest');
 const ongFactory = require('../../../factories/ongFactory');
 const connection = require('../../../../database/connection');
 
+beforeAll(async () => {
+  await connection.migrate.rollback();
+  await connection.migrate.latest();
+});
+
 afterAll(async () => {
   await connection('ongs').del();
+
+  await connection.destroy();
 });
 
 describe('POST /ongs', () => {
@@ -59,8 +66,6 @@ describe('POST /ongs', () => {
 
   context('when the ong already exists', () => {
     it('returns ong already exists', async () => {
-      console.log(newOng);
-
       const response = await request(api)
         .post('/api/v1/ongs')
         .send(newOng)

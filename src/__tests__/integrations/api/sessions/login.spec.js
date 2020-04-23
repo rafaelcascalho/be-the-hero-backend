@@ -4,8 +4,15 @@ const ongFactory = require('../../../factories/ongFactory');
 const connection = require('../../../../database/connection');
 const uuid = require('uuid');
 
+beforeAll(async () => {
+  await connection.migrate.rollback();
+  await connection.migrate.latest();
+});
+
 afterAll(async () => {
   await connection('ongs').del();
+
+  await connection.destroy();
 });
 
 describe('POST /sessions', () => {
