@@ -2,6 +2,7 @@ const connection = require('../database/connection');
 
 const selectionFields = [
   'incidents.*',
+  'ongs.name',
   'ongs.email',
   'ongs.whatsapp',
   'ongs.uf',
