@@ -19,26 +19,22 @@ const build = () => {
   };
 };
 
-const create = async () => {
-  let ong = build();
-  ong.id = uuid.v4();
-  await connection('ongs').insert(ong);
-  return ong;
-};
-
-const createMany = async (numberOfOngs) => {
-  let ongs = [];
-  for (let index = 0; index < numberOfOngs; index++) {
+module.exports = {
+  create: async () => {
     let ong = build();
     ong.id = uuid.v4();
     await connection('ongs').insert(ong);
-    ongs.push(ong);
-  }
-  return ongs;
-};
+    return ong;
+  },
 
-module.exports = {
-  build,
-  create,
-  createMany,
+  createMany: async (numberOfOngs) => {
+    let ongs = [];
+    for (let index = 0; index < numberOfOngs; index++) {
+      let ong = build();
+      ong.id = uuid.v4();
+      await connection('ongs').insert(ong);
+      ongs.push(ong);
+    }
+    return ongs;
+  },
 };
